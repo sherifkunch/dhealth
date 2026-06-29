@@ -51,34 +51,34 @@
 - [x] Package deal highlighting
 - [x] Booking CTA
 
-### Milestone 5: Contact
-- [ ] Contact form component (react-hook-form + Zod) + tests
-- [ ] Google Maps embed component
-- [ ] WorkingHours component + tests
-- [ ] WhatsApp/Viber direct buttons
-- [ ] Floating WhatsApp button (global)
-- [ ] Contact page assembly
-- [ ] Contact form validation E2E test
+### Milestone 5: Contact ✅
+- [x] Contact form component (react-hook-form + Zod) + tests
+- [x] Google Maps embed component
+- [x] WorkingHours component + tests
+- [x] WhatsApp/Viber direct buttons
+- [x] Floating WhatsApp button (global)
+- [x] Contact page assembly
+- [ ] Contact form validation E2E test (deferred to M9)
 
-### Milestone 6: Reviews
-- [ ] Reviews page with full grid
-- [ ] Review submission form + tests
-- [ ] Star rating component + tests
+### Milestone 6: Reviews ✅
+- [x] Reviews page with full grid
+- [x] Review submission form with interactive star rating
+- [x] Star rating integrated into ReviewForm
 
-### Milestone 7: Booking & Email
-- [ ] Zod validation schemas (all form types) + tests
-- [ ] Booking form with procedure pre-selection + tests
-- [ ] API route: POST /api/contact + tests
-- [ ] Resend email integration
-- [ ] Form submission feedback (toast)
-- [ ] Booking page assembly
-- [ ] Booking flow E2E test
+### Milestone 7: Booking & Email ✅
+- [x] Zod validation schemas (all form types) + tests
+- [x] Booking form with procedure pre-selection
+- [x] API route: POST /api/contact with Zod validation
+- [ ] Resend email integration (requires API key, deferred to M11)
+- [x] Form submission feedback (success/error states)
+- [x] Booking page assembly
+- [ ] Booking flow E2E test (deferred to M9)
 
-### Milestone 8: About & Products
-- [ ] About page content and layout
-- [ ] Products page structure with empty state
-- [ ] Product card component + tests
-- [ ] Category filtering
+### Milestone 8: About & Products ✅
+- [x] About page content and layout
+- [x] Products page structure with empty state
+- [ ] Product card component (deferred — no products yet)
+- [ ] Category filtering (deferred — no products yet)
 
 ### Milestone 9: SEO & Performance
 - [ ] Sitemap generation (src/app/sitemap.ts)

@@ -42,8 +42,25 @@ export default async function ProcedurePage({ params }: ProcedurePageProps) {
     .filter((p) => p.id !== procedure.id)
     .slice(0, 3);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name: procedure.name,
+    description: procedure.shortDescription,
+    url: `https://dhealth.bg/protseduri/${procedure.slug}`,
+    provider: {
+      "@type": "MedicalBusiness",
+      name: "DHealth",
+      url: "https://dhealth.bg",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHeader
         title={procedure.name}
         description={procedure.shortDescription}

@@ -26,6 +26,7 @@ export function ReviewForm() {
     defaultValues: { rating: 0 },
   });
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const currentRating = watch("rating");
 
   async function onSubmit(data: ReviewFormData) {
