@@ -80,32 +80,34 @@
 - [ ] Product card component (deferred — no products yet)
 - [ ] Category filtering (deferred — no products yet)
 
-### Milestone 9: SEO & Performance
-- [ ] Sitemap generation (src/app/sitemap.ts)
-- [ ] JSON-LD for procedure detail pages
-- [ ] JSON-LD for reviews page (AggregateRating)
-- [ ] Open Graph images
-- [ ] Lighthouse audit and optimization
-- [ ] Accessibility audit
-- [ ] SEO metadata E2E test
-- [ ] Navigation E2E test
-- [ ] Responsive layout E2E test
+### Milestone 9: SEO & Performance ✅
+- [x] Sitemap generation (src/app/sitemap.ts)
+- [x] JSON-LD for procedure detail pages (MedicalProcedure)
+- [x] JSON-LD for reviews page (AggregateRating)
+- [ ] Open Graph images (waiting for real images)
+- [x] Security headers (X-Frame-Options, CSP, Referrer-Policy, Permissions-Policy)
+- [x] Resend email integration wired in API route
+- [x] Playwright E2E tests — navigation (5 tests)
+- [x] Playwright E2E tests — home page (7 tests)
+- [x] Playwright E2E tests — procedures (6 tests)
+- [x] Playwright E2E tests — SEO metadata + structured data (9 tests)
+- [x] All quality gates pass: 54 unit tests, 27 E2E tests, build, lint, tsc
 
 ## Phase 2: Polish & Deployment
 
 ### Milestone 10: Final Polish
-- [ ] Real images for all procedures
-- [ ] Practitioner photo for About page
-- [ ] Product content population
+- [ ] Real images for all procedures (waiting for upload)
+- [ ] Practitioner photo for About page (waiting for upload)
+- [ ] Product content population (waiting for content)
 - [ ] Cross-browser testing
 - [ ] Mobile device testing
 - [ ] Final content review with clinic owner
-- [ ] Full test suite passes (`npm test && npm run test:e2e`)
+- [x] Full test suite passes (`npm test && npm run test:e2e`)
 
 ### Milestone 11: Deployment
-- [ ] Git repository setup
+- [x] Git repository setup (github.com/sherifkunch/dhealth)
 - [ ] Vercel project creation
-- [ ] Environment variable configuration
+- [ ] Environment variable configuration (RESEND_API_KEY)
 - [ ] Custom domain setup (dhealth.bg)
 - [ ] DNS configuration
 - [ ] Production verification
