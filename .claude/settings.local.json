@@ -1,7 +1,27 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:dhealth.bg)"
+      "WebFetch(domain:dhealth.bg)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(git *)",
+      "Bash(docker compose *)",
+      "Bash(mkdir *)",
+      "Bash(mv *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(node *)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(sort *)",
+      "Bash(which *)",
+      "Read",
+      "Edit",
+      "Write"
     ]
   }
 }
