@@ -34,22 +34,22 @@
 - [x] Assemble complete home page
 - [ ] Home page E2E test (deferred to M9 with other E2E tests)
 
-### Milestone 3: Procedures
-- [ ] Procedures listing page with full grid
-- [ ] Dynamic procedure detail page with `generateStaticParams`
-- [ ] `generateMetadata` for procedure SEO
-- [ ] ProcedureDetail component (description, benefits, duration) + tests
-- [ ] Related procedures section
-- [ ] Procedure-specific booking CTA
-- [ ] Procedures E2E test
+### Milestone 3: Procedures ✅
+- [x] Procedures listing page with full grid
+- [x] Dynamic procedure detail page with `generateStaticParams`
+- [x] `generateMetadata` for procedure SEO
+- [x] ProcedureDetail component (description, benefits, duration) + tests
+- [x] Related procedures section
+- [x] Procedure-specific booking CTA
+- [ ] Procedures E2E test (deferred to M9)
 
-### Milestone 4: Prices
-- [ ] Pricing data file with all categories and items
-- [ ] Tests for pricing data integrity
-- [ ] PricingTable component + tests
-- [ ] Prices page with categorized table
-- [ ] Package deal highlighting
-- [ ] Booking CTA
+### Milestone 4: Prices ✅
+- [x] Pricing data file with all categories and items
+- [x] Tests for pricing data integrity
+- [x] PricingTable component + tests
+- [x] Prices page with categorized table
+- [x] Package deal highlighting
+- [x] Booking CTA
 
 ### Milestone 5: Contact
 - [ ] Contact form component (react-hook-form + Zod) + tests
