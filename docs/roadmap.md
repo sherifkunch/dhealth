@@ -17,22 +17,22 @@
 - [x] Site config and navigation data files
 - [x] TypeScript interfaces for all entities
 
-### Milestone 2: Home Page
-- [ ] Set up Vitest + React Testing Library + Playwright
-- [ ] Procedures data file with all 12 procedures
-- [ ] Tests for procedures data integrity
-- [ ] Reviews data file with all testimonials
-- [ ] Tests for reviews data integrity
-- [ ] Hero section component
-- [ ] Stats section component
-- [ ] ProcedureCard component + tests
-- [ ] Featured procedures grid (ServicesPreview)
-- [ ] ReviewCard component + tests
-- [ ] Testimonials preview component
-- [ ] CTA section component
-- [ ] Contact preview section
-- [ ] Assemble complete home page
-- [ ] Home page E2E test
+### Milestone 2: Home Page ✅
+- [x] Set up Vitest + React Testing Library
+- [x] Procedures data file with all 12 procedures
+- [x] Tests for procedures data integrity
+- [x] Reviews data file with all testimonials
+- [x] Tests for reviews data integrity
+- [x] Hero section component
+- [x] Stats section component
+- [x] ProcedureCard component + tests
+- [x] Featured procedures grid (ServicesPreview)
+- [x] ReviewCard component + tests
+- [x] Testimonials preview component
+- [x] CTA section component
+- [x] Contact preview section
+- [x] Assemble complete home page
+- [ ] Home page E2E test (deferred to M9 with other E2E tests)
 
 ### Milestone 3: Procedures
 - [ ] Procedures listing page with full grid
