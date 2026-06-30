@@ -43,3 +43,22 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+export interface BlogSection {
+  type: "paragraph" | "heading" | "list";
+  text?: string;
+  items?: string[];
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: BlogSection[];
+  category: string;
+  date: string;
+  readingTime: number;
+  featured?: boolean;
+  image?: string;
+}

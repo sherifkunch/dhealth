@@ -95,7 +95,18 @@
 
 ## Phase 2: Polish & Deployment
 
-### Milestone 10: Final Polish
+### Milestone 10: Blog ✅
+- [x] BlogPost and BlogSection types in src/types/index.ts
+- [x] Blog posts data file (src/data/posts.ts) with 3 sample articles
+- [x] BlogPostCard component + tests
+- [x] BlogPostContent renderer component
+- [x] /blog listing page
+- [x] /blog/[slug] detail page with generateStaticParams, generateMetadata, JSON-LD Article schema
+- [x] Блог added to main navigation
+- [x] Blog posts added to sitemap
+- [x] All 71 unit tests pass, tsc and lint clean
+
+### Milestone 11: Final Polish
 - [ ] Real images for all procedures (waiting for upload)
 - [ ] Practitioner photo for About page (waiting for upload)
 - [ ] Product content population (waiting for content)
@@ -104,7 +115,7 @@
 - [ ] Final content review with clinic owner
 - [x] Full test suite passes (`npm test && npm run test:e2e`)
 
-### Milestone 11: Deployment
+### Milestone 12: Deployment
 - [x] Git repository setup (github.com/sherifkunch/dhealth)
 - [ ] Vercel project creation
 - [ ] Environment variable configuration (RESEND_API_KEY)
