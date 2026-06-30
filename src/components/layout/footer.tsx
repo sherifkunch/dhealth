@@ -2,8 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
-import { mainNavItems } from "@/data/navigation";
 import { Separator } from "@/components/ui/separator";
+
+const featuredProcedures = [
+  { label: "Физиотерапия", href: "/protseduri/fizioterapia" },
+  { label: "Кинезитерапия", href: "/protseduri/kineziterapia" },
+  { label: "Масаж", href: "/protseduri/masaj" },
+  { label: "ЕМС тренировки", href: "/protseduri/ems-trenirovki" },
+  { label: "Текар терапия", href: "/protseduri/tekar-terapiya" },
+  { label: "Всички процедури", href: "/protseduri" },
+];
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -23,9 +31,11 @@ function FacebookIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted/30">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <footer className="border-t bg-muted/20">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+          {/* Column 1 — Brand */}
           <div>
             <Image
               src="/images/Ver2-vertical-full-color.png"
@@ -34,38 +44,25 @@ export function Footer() {
               height={48}
               className="h-10 w-auto"
             />
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Персонализирани програми за възстановяване, рехабилитация и
               подобряване на качеството на живот.
             </p>
-            <div className="mt-4 flex gap-3">
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <InstagramIcon className="h-5 w-5" />
-              </a>
-              <a
-                href={siteConfig.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <FacebookIcon className="h-5 w-5" />
-              </a>
-            </div>
+            <Link
+              href="/zapitvane"
+              className="mt-5 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80"
+            >
+              Запазете час →
+            </Link>
           </div>
 
+          {/* Column 2 — Procedures */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Навигация
+              Процедури
             </h3>
-            <nav className="mt-3 flex flex-col gap-2" aria-label="Навигация в долния колонтитул">
-              {mainNavItems.map((item) => (
+            <nav className="mt-4 flex flex-col gap-2.5" aria-label="Процедури в долния колонтитул">
+              {featuredProcedures.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -74,20 +71,15 @@ export function Footer() {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/zapitvane"
-                className="text-sm font-medium text-primary transition-colors hover:text-primary/80"
-              >
-                Запазете час
-              </Link>
             </nav>
           </div>
 
+          {/* Column 3 — Contact */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
               Контакти
             </h3>
-            <div className="mt-3 flex flex-col gap-3">
+            <div className="mt-4 flex flex-col gap-3">
               <a
                 href={`tel:${siteConfig.phone}`}
                 className="flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground"
@@ -117,9 +109,57 @@ export function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Column 4 — Social & Navigation */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+              Последвайте ни
+            </h3>
+            <div className="mt-4 flex gap-3">
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
+              >
+                <InstagramIcon className="h-4.5 w-4.5" />
+              </a>
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
+              >
+                <FacebookIcon className="h-4.5 w-4.5" />
+              </a>
+            </div>
+
+            <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-foreground">
+              Навигация
+            </h3>
+            <nav className="mt-4 flex flex-col gap-2.5" aria-label="Навигация в долния колонтитул">
+              {[
+                { label: "За нас", href: "/za-nas" },
+                { label: "Цени", href: "/tseni" },
+                { label: "Блог", href: "/blog" },
+                { label: "Отзиви", href: "/otzivi" },
+                { label: "Контакти", href: "/kontakti" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-10" />
 
         <div className="flex flex-col items-center justify-between gap-2 text-xs text-muted-foreground sm:flex-row">
           <p>

@@ -1,109 +1,239 @@
 # Design System
 
-## Color Palette
+> **Project:** DHealth 2.0
+> **Version:** 1.0
+> **Purpose:** Define the visual language, UX principles, and UI standards for the entire application. Every page, component, and interaction must follow this document.
+
+---
+
+# Design Philosophy
+
+The website should communicate **trust**, **professionalism**, **calmness**, and **premium quality**.
+
+Users should immediately feel they are interacting with a modern healthcare brand rather than a generic medical website.
+
+Every design decision should prioritize:
+
+* Simplicity
+* Clarity
+* Accessibility
+* Performance
+* Consistency
+* Readability
+
+The interface should feel inspired by the design quality of:
+
+* Apple
+* Stripe
+* Linear
+* Vercel
+* Notion
+* Raycast
+
+Avoid visual clutter and unnecessary decoration.
+
+---
+
+# Design Principles
+
+## Less is More
+
+Every element must have a purpose. Do not add decorative elements unless they improve the user experience.
+
+## Whitespace is a Feature
+
+Generous spacing improves readability and creates a premium feeling. Never overcrowd layouts.
+
+## Strong Visual Hierarchy
+
+Every page should clearly communicate:
+
+1. Primary action
+2. Supporting information
+3. Secondary actions
+
+## Consistency
+
+Identical components must always look and behave identically.
+
+## Accessibility First
+
+All interfaces should comply with WCAG 2.1 AA where practical.
+
+---
+
+# Brand Personality
+
+**Feel:** Professional, Friendly, Calm, Modern, Trustworthy, Premium, Clean
+
+**Never:** Corporate, Cold, Generic, Template-based, Outdated, Busy
+
+---
+
+# Color System
 
 All colors are defined as CSS custom properties in `src/app/globals.css` using OKLCH color space.
 
-| Token | Role | Value |
-|-------|------|-------|
-| `--primary` | Brand color, CTAs, links | Teal `oklch(0.45 0.12 175)` |
-| `--primary-foreground` | Text on primary | Near-white |
-| `--secondary` | Secondary backgrounds | Light teal tint |
-| `--secondary-foreground` | Text on secondary | Dark teal |
-| `--background` | Page background | Off-white with subtle green tint |
-| `--foreground` | Primary text | Near-black with green tint |
-| `--muted` | Subtle backgrounds | Light gray-green |
-| `--muted-foreground` | Secondary text | Medium gray |
-| `--accent` | Hover states, highlights | Same as secondary |
-| `--destructive` | Error states | Red |
-| `--border` | Borders | Light gray |
-| `--ring` | Focus rings | Same as primary |
+| Token | Hex | OKLCH | Usage |
+|---|---|---|---|
+| Primary | `#0EA5A4` | `oklch(0.62 0.12 192)` | Primary actions |
+| Primary Hover | `#0D9488` | `oklch(0.57 0.12 182)` | Button hover |
+| Secondary | `#0F172A` | `oklch(0.17 0.024 265)` | Text primary |
+| Accent | `#22C55E` | `oklch(0.72 0.2 152)` | Success accent |
+| Success | `#16A34A` | `oklch(0.64 0.19 150)` | Success state |
+| Warning | `#F59E0B` | `oklch(0.75 0.15 68)` | Warning state |
+| Error | `#DC2626` | `oklch(0.58 0.22 27)` | Error/destructive |
+| Background | `#FFFFFF` | `oklch(1 0 0)` | Page background |
+| Secondary BG | `#F1F5F9` | `oklch(0.97 0.006 240)` | Muted surfaces |
+| Surface | `#FFFFFF` | `oklch(1 0 0)` | Cards |
+| Border | `#E2E8F0` | `oklch(0.93 0.012 240)` | Dividers, borders |
+| Text Primary | `#0F172A` | `oklch(0.17 0.024 265)` | Headings, body |
+| Text Secondary | `#475569` | `oklch(0.49 0.024 252)` | Supporting text |
+| Disabled | `#CBD5E1` | `oklch(0.86 0.016 240)` | Disabled states |
 
-### Color Usage Rules
+---
 
-1. Primary color is reserved for: CTAs, links, active nav items, brand elements
-2. Muted foreground for: secondary text, descriptions, metadata
-3. Never use color alone to convey meaning — always pair with text or icons
-4. Maintain 4.5:1 contrast ratio for all text (WCAG AA)
+# Typography
 
-## Typography
+**Font Family:** Inter (primary), system-ui (fallback)
 
-### Font
+| Name | Size | Usage |
+|---|---|---|
+| Hero — Desktop | 64px | h1 on landing pages (lg:text-[4rem]) |
+| Hero — Tablet | 48px | h1 sm breakpoint (sm:text-5xl) |
+| Hero — Mobile | 36px | h1 base (text-4xl) |
+| Section Heading | 40px | h2 section titles (sm:text-[2.5rem]) |
+| Card Heading | 24px | h3 in cards (text-2xl) |
+| Body | 18px | Main paragraphs (text-lg) |
+| Small Text | 16px | Supporting text (text-base) |
+| Caption | 14px | Metadata, labels (text-sm) |
 
-- **Primary**: Inter (via `next/font/google`)
-- **Subsets**: `cyrillic`, `latin`
-- **Variable**: `--font-sans`
+Rules: generous line-height (`leading-relaxed`), 60–75 char paragraph width (`max-w-2xl`).
 
-### Scale
+---
 
-| Element | Size | Weight | Tracking |
-|---------|------|--------|----------|
-| Page title (h1) | `text-3xl` / `sm:text-4xl` | `font-bold` | `tracking-tight` |
-| Section title (h2) | `text-2xl` / `sm:text-3xl` | `font-bold` | `tracking-tight` |
-| Card title (h3) | `text-lg` | `font-semibold` | — |
-| Body | `text-base` (16px) | `font-normal` | — |
-| Small text | `text-sm` (14px) | `font-normal` | — |
-| Caption | `text-xs` (12px) | `font-normal` | — |
-| Label/overline | `text-sm` | `font-medium` | `tracking-widest uppercase` |
+# Layout
 
-### Rules
+| | Value | Tailwind |
+|---|---|---|
+| Max content width | 1280px | `max-w-7xl` |
+| Container padding desktop | 32px | `lg:px-8` |
+| Container padding tablet | 24px | `sm:px-6` |
+| Container padding mobile | 16px | `px-4` |
+| Section spacing desktop | 120px | `lg:py-30` |
+| Section spacing tablet | 96px | `sm:py-24` |
+| Section spacing mobile | 72px | `py-18` |
 
-1. Only one `h1` per page
-2. Heading hierarchy must not skip levels (h1 → h2 → h3)
-3. All body text is `text-foreground`, secondary text is `text-muted-foreground`
-4. Line height: body uses Tailwind defaults (~1.5), headings use `leading-tight`
+---
 
-## Spacing
+# Border Radius
 
-### Section Spacing
-- Vertical padding: `py-16` (64px) standard, `py-24 sm:py-32` for hero
-- Max width: `max-w-7xl` (1280px)
-- Horizontal padding: `px-4 sm:px-6 lg:px-8`
-- Use `SectionWrapper` component for consistent application
+Base radius variable: `--radius: 0.875rem` (14px).
 
-### Component Spacing
-- Card gap in grids: `gap-6` or `gap-8`
-- Stack spacing: `gap-4` between related items, `gap-8` between sections
-- Button group gap: `gap-4`
+| Name | Value | Usage |
+|---|---|---|
+| Small (radius-sm) | ~8px | Input fields, small chips |
+| Medium (radius-md) | ~11px | Buttons small |
+| Large (radius-xl) | ~20px | Cards, buttons default |
+| Extra Large (radius-2xl) | ~25px | Large cards, modals |
 
-## Border Radius
+---
 
-Defined via `--radius` CSS variable (0.625rem = 10px base).
+# Shadows
 
-| Token | Size |
-|-------|------|
-| `rounded-sm` | 6px |
-| `rounded-md` | 8px |
-| `rounded-lg` | 10px |
-| `rounded-xl` | 14px |
+| State | Class |
+|---|---|
+| Card resting | `shadow-sm` |
+| Card hover | `shadow-md` |
 
-## Shadows
+Cards prefer `shadow-sm` over heavy borders. Never use dramatic shadows.
 
-- Cards: no shadow by default, subtle shadow on hover if needed
-- Header: no shadow, uses `border-b` + `backdrop-blur`
-- Modals/sheets: `shadow-lg`
+---
 
-## Breakpoints
+# Buttons
 
-| Name | Min Width | Usage |
-|------|----------|-------|
-| Default | 0px | Mobile portrait |
-| `sm` | 640px | Mobile landscape |
-| `md` | 768px | Tablet |
-| `lg` | 1024px | Laptop |
-| `xl` | 1280px | Desktop |
-| `2xl` | 1536px | Large desktop |
+- Primary: teal fill, white text, `rounded-xl`, large padding, semibold
+- Outline: white bg, teal border on hover
+- Ghost: transparent, navigation/toolbar only
+- All buttons: `active:scale-[0.97]` for tactile feedback
 
-### Key Responsive Patterns
+---
 
-- Navigation: sheet menu → inline nav at `lg`
-- Grids: 1 col → 2 col at `sm` → 3 col at `lg`
-- Hero text: `text-4xl` → `text-5xl` at `sm` → `text-6xl` at `lg`
-- Footer: stacked → 3-column at `lg`
+# Cards
 
-## Motion
+- Large padding (`p-6` minimum)
+- Soft shadow (`shadow-sm`), not heavy borders
+- `rounded-xl` (20px) or `rounded-2xl` (25px)
+- Hover: `hover:shadow-md` — subtle shadow lift
+- Consistent internal spacing
 
-- Transitions: `transition-colors` for hover states (150ms default)
-- No page transitions or scroll animations (keep it fast and simple)
-- Respect `prefers-reduced-motion`
-- Sheet/dialog enter/exit: handled by shadcn/ui defaults
+---
+
+# Navigation
+
+- Sticky, `backdrop-blur` always active
+- Desktop: Logo | Nav links | CTA button
+- Mobile: Logo | Hamburger | Slide-in drawer
+
+---
+
+# Footer
+
+Four-column layout on desktop:
+1. Company (logo + tagline + social links)
+2. Procedures (links to key procedure pages)
+3. Contact (phone, email, address, hours)
+4. Social Media / CTA
+
+---
+
+# Section Headings
+
+Pattern for every section:
+
+```tsx
+<h2 className="text-3xl font-bold tracking-tight sm:text-[2.5rem]">...</h2>
+<p className="mt-4 text-lg text-muted-foreground">...</p>
+```
+
+---
+
+# Animations
+
+| Type | Value |
+|---|---|
+| Transitions | 200ms ease |
+| Hover | lift + shadow + color |
+| Scroll | fade / slide-up (future) |
+
+Avoid: bounce, excessive scaling, long animations (>300ms).
+
+---
+
+# Performance Targets
+
+| Metric | Target |
+|---|---|
+| Lighthouse Performance | ≥ 95 |
+| Accessibility | ≥ 95 |
+| Best Practices | ≥ 95 |
+| SEO | ≥ 95 |
+| LCP | < 2.5s |
+| CLS | < 0.1 |
+
+---
+
+# AI Development Rules
+
+Before implementing any page:
+
+1. Read this document.
+2. Follow every design principle.
+3. Reuse existing components whenever possible.
+4. Do not introduce a new visual style.
+5. Keep spacing consistent with the values in this document.
+6. Keep typography consistent with the scale defined here.
+7. Explain major design decisions before implementing large sections.
+8. Never generate placeholder UI unless explicitly requested.
+9. Prefer reusable components over duplicated layouts.
+10. Build mobile-first while ensuring an excellent desktop experience.

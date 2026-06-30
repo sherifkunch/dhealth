@@ -11,20 +11,20 @@ export function ServicesPreview() {
   return (
     <SectionWrapper>
       <div className="text-center">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-[2.5rem]">
           Какво предлагаме?
         </h2>
-        <p className="mt-3 text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
           Специализирани процедури за вашето здраве и добро самочувствие.
         </p>
       </div>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {featured.map((procedure) => (
           <ProcedureCard key={procedure.id} procedure={procedure} />
         ))}
       </div>
-      <div className="mt-10 text-center">
-        <Button render={<Link href="/protseduri" />} variant="outline">
+      <div className="mt-12 text-center">
+        <Button render={<Link href="/protseduri" />} variant="outline" size="lg">
           Виж всички процедури
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>

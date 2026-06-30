@@ -14,10 +14,10 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps) {
   return (
-    <div className="border-b bg-muted/30 py-12">
+    <div className="border-b bg-muted/30 py-14 sm:py-18">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav aria-label="Навигационна пътека" className="mb-4">
+          <nav aria-label="Навигационна пътека" className="mb-5">
             <ol className="flex items-center gap-1 text-sm text-muted-foreground">
               <li>
                 <Link href="/" className="hover:text-foreground">
@@ -39,11 +39,11 @@ export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps)
             </ol>
           </nav>
         )}
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
           {title}
         </h1>
         {description && (
-          <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {description}
           </p>
         )}

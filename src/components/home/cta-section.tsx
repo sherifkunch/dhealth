@@ -16,16 +16,20 @@ export function CTASection({
   buttonText = "Запазете час",
 }: CTASectionProps) {
   return (
-    <section className="bg-primary/5">
-      <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+    <section className="bg-primary">
+      <div className="mx-auto max-w-7xl px-4 py-18 text-center sm:px-6 sm:py-24 lg:px-8 lg:py-30">
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-[2.5rem]">
           {title}
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
           {description}
         </p>
-        <div className="mt-8">
-          <Button render={<Link href={href} />} size="lg">
+        <div className="mt-10">
+          <Button
+            render={<Link href={href} />}
+            size="lg"
+            className="bg-white text-primary shadow-lg hover:bg-white/90 hover:shadow-xl"
+          >
             {buttonText}
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
