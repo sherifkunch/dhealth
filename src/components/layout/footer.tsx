@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { mainNavItems } from "@/data/navigation";
@@ -26,7 +27,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h3 className="text-lg font-semibold text-primary">DHealth</h3>
+            <Image
+              src="/images/Ver2-vertical-full-color.png"
+              alt="DHealth"
+              width={120}
+              height={48}
+              className="h-10 w-auto"
+            />
             <p className="mt-2 text-sm text-muted-foreground">
               Персонализирани програми за възстановяване, рехабилитация и
               подобряване на качеството на живот.
