@@ -15,6 +15,6 @@ export const miopunktura: Procedure = {
     "Лечение на тригерни точки",
   ],
   duration: "30-45 мин",
-  image: "/images/procedures/miopunktura.jpg",
+  image: "/images/procedures/miopunktura/main.jpg",
   featured: false,
 };

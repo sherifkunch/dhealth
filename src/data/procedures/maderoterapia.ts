@@ -15,6 +15,6 @@ export const maderoterapia: Procedure = {
     "Стягане на кожата",
   ],
   duration: "40 мин",
-  image: "/images/procedures/maderoterapia.jpg",
+  image: "/images/procedures/maderoterapia/main.jpg",
   featured: false,
 };

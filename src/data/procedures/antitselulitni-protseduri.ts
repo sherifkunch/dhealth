@@ -15,6 +15,6 @@ export const antitselulitniProtseduri: Procedure = {
     "Оформяне на тялото",
   ],
   duration: "40-60 мин",
-  image: "/images/procedures/antitselulitni-protseduri.jpg",
+  image: "/images/procedures/antitselulitni-protseduri/main.jpg",
   featured: true,
 };

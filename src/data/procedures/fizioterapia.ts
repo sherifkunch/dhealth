@@ -15,6 +15,6 @@ export const fizioterapia: Procedure = {
     "Подобряване на кръвообращението",
   ],
   duration: "30-60 мин",
-  image: "/images/procedures/fizioterapia.jpg",
+  image: "/images/procedures/fizioterapia/main.jpg",
   featured: true,
 };

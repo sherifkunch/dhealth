@@ -15,6 +15,6 @@ export const dalbokaOstsilatsiya: Procedure = {
     "Активиране на лимфния поток",
   ],
   duration: "30-45 мин",
-  image: "/images/procedures/dalboka-ostsilatsiya.jpg",
+  image: "/images/procedures/dalboka-ostsilatsiya/main.jpg",
   featured: true,
 };

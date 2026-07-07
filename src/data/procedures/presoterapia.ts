@@ -15,6 +15,6 @@ export const presoterapia: Procedure = {
     "Намаляване на отоци",
   ],
   duration: "30-40 мин",
-  image: "/images/procedures/presoterapia.jpg",
+  image: "/images/procedures/presoterapia/main.jpg",
   featured: false,
 };

@@ -15,6 +15,6 @@ export const emsTrenirovka: Procedure = {
     "Щадящо за ставите",
   ],
   duration: "20 мин",
-  image: "/images/procedures/ems-trenirovka.jpg",
+  image: "/images/procedures/ems-trenirovka/main.jpg",
   featured: false,
 };

@@ -15,6 +15,6 @@ export const emsStimulatsiya: Procedure = {
     "Намаляване на мускулни спазми",
   ],
   duration: "20-30 мин",
-  image: "/images/procedures/ems-stimulatsiya.jpg",
+  image: "/images/procedures/ems-stimulatsiya/main.jpg",
   featured: true,
 };

@@ -15,6 +15,6 @@ export const kineziterapia: Procedure = {
     "Възстановяване след травми",
   ],
   duration: "45-60 мин",
-  image: "/images/procedures/kineziterapia.jpg",
+  image: "/images/procedures/kineziterapia/main.jpg",
   featured: true,
 };

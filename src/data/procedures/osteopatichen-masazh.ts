@@ -15,6 +15,6 @@ export const osteopatichenMasazh: Procedure = {
     "Намалени бръчки",
   ],
   duration: "45-60 мин",
-  image: "/images/procedures/osteopatichen-masazh.jpg",
+  image: "/images/procedures/osteopatichen-masazh/main.jpg",
   featured: false,
 };

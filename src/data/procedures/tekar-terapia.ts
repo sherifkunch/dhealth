@@ -15,6 +15,6 @@ export const tekarTerapia: Procedure = {
     "Тъканно възстановяване",
   ],
   duration: "20-40 мин",
-  image: "/images/procedures/tekar-terapia.jpg",
+  image: "/images/procedures/tekar-terapia/main.jpg",
   featured: true,
 };

@@ -15,6 +15,6 @@ export const limfenDrenazh: Procedure = {
     "Подобряване на кожата",
   ],
   duration: "45-60 мин",
-  image: "/images/procedures/limfen-drenazh.jpg",
+  image: "/images/procedures/limfen-drenazh/main.jpg",
   featured: false,
 };
