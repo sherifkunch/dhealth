@@ -52,11 +52,9 @@ describe("ProcedureDetail", () => {
   });
 
   it("links booking CTA to zapitvane with procedure param", () => {
-    render(<ProcedureDetail procedure={mockProcedure} relatedProcedures={mockRelated} />);
-    const links = screen.getAllByRole("link");
-    expect(
-      links.some((l) => l.getAttribute("href") === "/zapitvane?procedure=test-procedure")
-    ).toBe(true);
+    const { container } = render(<ProcedureDetail procedure={mockProcedure} relatedProcedures={mockRelated} />);
+    const el = container.querySelector('[href="/zapitvane?procedure=test-procedure"]');
+    expect(el).not.toBeNull();
   });
 
   it("renders related procedures", () => {
