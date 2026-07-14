@@ -13,6 +13,8 @@ const formSchema = z.discriminatedUnion("type", [
 
 type FormData = z.infer<typeof formSchema>;
 
+const notificationRecipients = [siteConfig.email, siteConfig.adminEmail];
+
 function buildSubject(data: FormData): string {
   switch (data.type) {
     case "contact":
@@ -95,7 +97,7 @@ export async function POST(request: Request) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         const { error } = await resend.emails.send({
           from: "DHealth <bookings@dhealth.bg>",
-          to: siteConfig.adminEmail,
+          to: notificationRecipients,
           subject,
           html,
         });
@@ -117,7 +119,7 @@ export async function POST(request: Request) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         const { error } = await resend.emails.send({
           from: "DHealth <bookings@dhealth.bg>",
-          to: [siteConfig.email, siteConfig.adminEmail],
+          to: notificationRecipients,
           subject,
           html,
         });
