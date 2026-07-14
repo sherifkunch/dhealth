@@ -94,7 +94,7 @@ export async function POST(request: Request) {
       if (process.env.RESEND_API_KEY) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
-          from: "DHealth <onboarding@resend.dev>",
+          from: "DHealth <bookings@dhealth.bg>",
           to: siteConfig.adminEmail,
           subject,
           html,
@@ -108,7 +108,7 @@ export async function POST(request: Request) {
       if (process.env.RESEND_API_KEY) {
         const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
-          from: "DHealth <onboarding@resend.dev>",
+          from: "DHealth <bookings@dhealth.bg>",
           to: siteConfig.email,
           subject,
           html,
