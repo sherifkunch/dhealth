@@ -5,7 +5,7 @@ export const siteConfig = {
     "Персонализирани програми за възстановяване, рехабилитация и подобряване на качеството на живот. Диана Димова — Кинезитерапевт в София.",
   url: "https://dhealth.bg",
   phone: "+359897077098",
-  phoneDisplay: "0897 077 098",
+  phoneDisplay: "+359897077098",
   email: "dhealth.bg@gmail.com",
   address: {
     street: "Бул. Климент Охридски 33",
