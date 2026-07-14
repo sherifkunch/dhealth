@@ -106,6 +106,15 @@
 - [x] Blog posts added to sitemap
 - [x] All 71 unit tests pass, tsc and lint clean
 
+### Careers Page ✅
+- [x] `JobOffer` type in `src/types/index.ts`
+- [x] Jobs data file (`src/data/jobs.ts`) with active positions and benefits
+- [x] `JobCard` component + tests
+- [x] `/kariera` page with positions grid, benefits list, and email CTA
+- [x] "Кариера" added to main navigation
+- [x] `/kariera` added to sitemap
+- [x] All tests pass (82 unit tests)
+
 ### Milestone 11: Final Polish
 - [ ] Real images for all procedures (waiting for upload)
 - [ ] Practitioner photo for About page (waiting for upload)

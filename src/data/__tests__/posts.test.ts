@@ -40,7 +40,7 @@ describe("posts data", () => {
   });
 
   it("content sections have valid types", () => {
-    const validTypes = ["paragraph", "heading", "list"];
+    const validTypes = ["paragraph", "heading", "subheading", "list"];
     for (const post of posts) {
       for (const section of post.content) {
         expect(validTypes).toContain(section.type);

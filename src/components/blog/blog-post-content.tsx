@@ -4,6 +4,13 @@ interface BlogPostContentProps {
   sections: BlogSection[];
 }
 
+function renderInline(text: string) {
+  const parts = text.split(/\*\*(.*?)\*\*/g);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+  );
+}
+
 export function BlogPostContent({ sections }: BlogPostContentProps) {
   return (
     <div className="prose prose-slate max-w-none">
@@ -19,6 +26,17 @@ export function BlogPostContent({ sections }: BlogPostContentProps) {
           );
         }
 
+        if (section.type === "subheading") {
+          return (
+            <h3
+              key={i}
+              className="mt-6 mb-2 text-base font-semibold tracking-tight text-foreground"
+            >
+              {section.text}
+            </h3>
+          );
+        }
+
         if (section.type === "list" && section.items) {
           return (
             <ul key={i} className="my-4 space-y-2 pl-5">
@@ -27,7 +45,7 @@ export function BlogPostContent({ sections }: BlogPostContentProps) {
                   key={j}
                   className="relative pl-1 text-sm leading-relaxed text-muted-foreground before:absolute before:-left-4 before:text-primary before:content-['•']"
                 >
-                  {item}
+                  {renderInline(item)}
                 </li>
               ))}
             </ul>
@@ -39,7 +57,7 @@ export function BlogPostContent({ sections }: BlogPostContentProps) {
             key={i}
             className="my-4 text-sm leading-relaxed text-muted-foreground sm:text-base"
           >
-            {section.text}
+            {section.text && renderInline(section.text)}
           </p>
         );
       })}

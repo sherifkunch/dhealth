@@ -7,6 +7,7 @@ export const mainNavItems: NavItem[] = [
   { label: "Цени", href: "/tseni" },
   { label: "За нас", href: "/za-nas" },
   { label: "Блог", href: "/blog" },
+  { label: "Кариера", href: "/kariera" },
   { label: "Отзиви", href: "/otzivi" },
   { label: "Контакти", href: "/kontakti" },
 ];

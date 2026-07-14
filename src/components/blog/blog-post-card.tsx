@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, Clock, Tag } from "lucide-react";
 import type { BlogPost } from "@/types";
 
@@ -16,7 +17,18 @@ function formatDate(iso: string): string {
 
 export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
-    <article className="group flex flex-col rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/8">
+    <article className="group relative flex flex-col rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/8">
+      {post.image && (
+        <div className="relative h-44 w-full overflow-hidden rounded-t-xl">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
+      )}
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">

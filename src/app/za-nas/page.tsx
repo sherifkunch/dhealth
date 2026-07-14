@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ArrowRight, Award, Heart, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/shared/page-header";
+import { MissionSection } from "@/components/home/mission-section";
 import { TeamMember } from "@/components/about/team-member";
 import { team } from "@/data/team";
 
@@ -90,6 +91,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+      <MissionSection />
     </>
   );
 }

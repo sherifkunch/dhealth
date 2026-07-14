@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/zapitvane`, lastModified: new Date(), priority: 0.7, changeFrequency: "monthly" },
     { url: `${baseUrl}/otzivi`, lastModified: new Date(), priority: 0.6, changeFrequency: "monthly" },
     { url: `${baseUrl}/za-nas`, lastModified: new Date(), priority: 0.5, changeFrequency: "monthly" },
+    { url: `${baseUrl}/kariera`, lastModified: new Date(), priority: 0.5, changeFrequency: "weekly" },
     { url: `${baseUrl}/produkti`, lastModified: new Date(), priority: 0.4, changeFrequency: "monthly" },
   ];
 }

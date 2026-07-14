@@ -45,7 +45,7 @@ export interface NavItem {
 }
 
 export interface BlogSection {
-  type: "paragraph" | "heading" | "list";
+  type: "paragraph" | "heading" | "subheading" | "list";
   text?: string;
   items?: string[];
 }
@@ -61,4 +61,13 @@ export interface BlogPost {
   readingTime: number;
   featured?: boolean;
   image?: string;
+}
+
+export interface JobOffer {
+  id: string;
+  title: string;
+  note?: string;
+  description: string;
+  requirements: string[];
+  active: boolean;
 }

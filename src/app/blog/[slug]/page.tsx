@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
@@ -83,6 +84,19 @@ export default async function BlogPostPage({ params }: Props) {
             {post.readingTime} мин четене
           </span>
         </div>
+
+        {post.image && (
+          <div className="relative mb-10 h-64 w-full overflow-hidden rounded-xl sm:h-80">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+          </div>
+        )}
 
         <BlogPostContent sections={post.content} />
 
