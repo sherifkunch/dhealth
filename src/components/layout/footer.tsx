@@ -31,7 +31,7 @@ function FacebookIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted/20">
+    <footer className="bg-blue-900">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
@@ -42,15 +42,15 @@ export function Footer() {
               alt="DHealth"
               width={120}
               height={48}
-              className="h-10 w-auto"
+              className="h-10 w-auto brightness-0 invert"
             />
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-white/65">
               Персонализирани програми за възстановяване, рехабилитация и
               подобряване на качеството на живот.
             </p>
             <Link
               href="/zapitvane"
-              className="mt-5 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80"
+              className="mt-5 inline-flex items-center text-sm font-medium text-white hover:text-white/80"
             >
               Запазете час →
             </Link>
@@ -58,7 +58,7 @@ export function Footer() {
 
           {/* Column 2 — Procedures */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/45">
               Процедури
             </h3>
             <nav className="mt-4 flex flex-col gap-2.5" aria-label="Процедури в долния колонтитул">
@@ -66,7 +66,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -76,31 +76,29 @@ export function Footer() {
 
           {/* Column 3 — Contact */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/45">
               Контакти
             </h3>
             <div className="mt-4 flex flex-col gap-3">
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground"
+                className="flex items-start gap-2 text-sm text-white/65 hover:text-white"
               >
                 <Phone className="mt-0.5 h-4 w-4 shrink-0" />
                 {siteConfig.phoneDisplay}
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-foreground"
+                className="flex items-start gap-2 text-sm text-white/65 hover:text-white"
               >
                 <Mail className="mt-0.5 h-4 w-4 shrink-0" />
                 {siteConfig.email}
               </a>
-              <div className="flex items-start gap-2 text-sm text-muted-foreground">
+              <div className="flex items-start gap-2 text-sm text-white/65">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>
-                  {siteConfig.address.street}, {siteConfig.address.city}
-                </span>
+                <span>{siteConfig.address.street}, {siteConfig.address.city}</span>
               </div>
-              <div className="flex items-start gap-2 text-sm text-muted-foreground">
+              <div className="flex items-start gap-2 text-sm text-white/65">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
                   <div>{siteConfig.workingHours.days}</div>
@@ -112,7 +110,7 @@ export function Footer() {
 
           {/* Column 4 — Social & Navigation */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/45">
               Последвайте ни
             </h3>
             <div className="mt-4 flex gap-3">
@@ -121,22 +119,22 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/65 transition-colors hover:border-white/30 hover:text-white"
               >
-                <InstagramIcon className="h-4.5 w-4.5" />
+                <InstagramIcon className="h-4 w-4" />
               </a>
               <a
                 href={siteConfig.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-primary/30 hover:text-primary"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/65 transition-colors hover:border-white/30 hover:text-white"
               >
-                <FacebookIcon className="h-4.5 w-4.5" />
+                <FacebookIcon className="h-4 w-4" />
               </a>
             </div>
 
-            <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h3 className="mt-8 text-xs font-semibold uppercase tracking-widest text-white/45">
               Навигация
             </h3>
             <nav className="mt-4 flex flex-col gap-2.5" aria-label="Навигация в долния колонтитул">
@@ -150,7 +148,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm text-white/65 transition-colors hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -159,12 +157,11 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-10" />
+        <Separator className="my-10 bg-white/8" />
 
-        <div className="flex flex-col items-center justify-between gap-2 text-xs text-muted-foreground sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-2 text-xs text-white/35 sm:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} {siteConfig.name}. Всички права
-            запазени.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. Всички права запазени.
           </p>
           <p>{siteConfig.owner.name} — {siteConfig.owner.title}</p>
         </div>

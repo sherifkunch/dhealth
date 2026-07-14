@@ -13,7 +13,7 @@ export function GoogleMap({ height = "300px" }: GoogleMapProps) {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        title="DHealth — Бул. Климент Охридски 23, София"
+        title="DHealth — Бул. Климент Охридски 33, София"
       />
     </div>
   );

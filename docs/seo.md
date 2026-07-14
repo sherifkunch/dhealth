@@ -33,7 +33,7 @@ Target local search in Sofia for physiotherapy and kinesitherapy services. Every
   "email": "dhealth.bg@gmail.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Бул. Климент Охридски 23",
+    "streetAddress": "Бул. Климент Охридски 33",
     "addressLocality": "София",
     "addressCountry": "BG"
   },

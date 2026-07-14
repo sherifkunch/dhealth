@@ -16,7 +16,7 @@ function formatDate(iso: string): string {
 
 export function BlogPostCard({ post }: BlogPostCardProps) {
   return (
-    <article className="group flex flex-col rounded-2xl border bg-background transition-shadow hover:shadow-md">
+    <article className="group flex flex-col rounded-xl border border-border bg-background transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/8">
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
@@ -33,7 +33,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
           </span>
         </div>
 
-        <h2 className="mt-3 text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-primary">
+        <h2 className="mt-3 text-base font-semibold leading-snug tracking-tight transition-colors group-hover:text-primary">
           <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0">
             {post.title}
           </Link>
@@ -43,10 +43,9 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
           {post.excerpt}
         </p>
 
-        <div className="mt-4 flex items-center text-sm font-medium text-primary">
-          <span className="transition-transform group-hover:translate-x-0.5">
-            Прочетете повече →
-          </span>
+        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-primary">
+          <span>Прочетете повече</span>
+          <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
         </div>
       </div>
     </article>

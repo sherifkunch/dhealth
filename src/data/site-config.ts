@@ -8,7 +8,7 @@ export const siteConfig = {
   phoneDisplay: "0897 077 098",
   email: "dhealth.bg@gmail.com",
   address: {
-    street: "Бул. Климент Охридски 23",
+    street: "Бул. Климент Охридски 33",
     city: "София",
     country: "България",
   },

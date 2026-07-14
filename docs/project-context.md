@@ -12,7 +12,7 @@ A complete rebuild of [dhealth.bg](https://dhealth.bg) — the website for a phy
 
 | | |
 |---|---|
-| Address | Бул. Климент Охридски 23, София |
+| Address | Бул. Климент Охридски 33, София |
 | Phone | +359 897 077 098 |
 | Email | dhealth.bg@gmail.com |
 | Hours | Monday–Saturday, 08:00–20:00 |

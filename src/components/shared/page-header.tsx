@@ -14,7 +14,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps) {
   return (
-    <div className="border-b bg-muted/30 py-14 sm:py-18">
+    <div className="border-b border-border bg-gradient-to-b from-slate-50 to-white py-14 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav aria-label="Навигационна пътека" className="mb-5">

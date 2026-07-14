@@ -6,7 +6,7 @@ describe("contactFormSchema", () => {
     const result = contactFormSchema.safeParse({
       name: "Иван Иванов",
       email: "ivan@example.com",
-      phone: "0897077098",
+      phone: "+359897077098",
       message: "Искам да запазя час за консултация.",
     });
     expect(result.success).toBe(true);
@@ -16,7 +16,7 @@ describe("contactFormSchema", () => {
     const result = contactFormSchema.safeParse({
       name: "И",
       email: "ivan@example.com",
-      phone: "0897077098",
+      phone: "+359897077098",
       message: "Искам да запазя час.",
     });
     expect(result.success).toBe(false);
@@ -26,7 +26,7 @@ describe("contactFormSchema", () => {
     const result = contactFormSchema.safeParse({
       name: "Иван",
       email: "not-an-email",
-      phone: "0897077098",
+      phone: "+359897077098",
       message: "Искам да запазя час.",
     });
     expect(result.success).toBe(false);
@@ -36,7 +36,7 @@ describe("contactFormSchema", () => {
     const result = contactFormSchema.safeParse({
       name: "Иван",
       email: "ivan@example.com",
-      phone: "0897077098",
+      phone: "+359897077098",
       message: "Кратко",
     });
     expect(result.success).toBe(false);
@@ -47,7 +47,7 @@ describe("bookingFormSchema", () => {
   it("accepts valid input", () => {
     const result = bookingFormSchema.safeParse({
       name: "Мария",
-      phone: "0897077098",
+      phone: "+359897077098",
       procedure: "kineziterapia",
     });
     expect(result.success).toBe(true);
@@ -56,7 +56,7 @@ describe("bookingFormSchema", () => {
   it("requires procedure", () => {
     const result = bookingFormSchema.safeParse({
       name: "Мария",
-      phone: "0897077098",
+      phone: "+359897077098",
       procedure: "",
     });
     expect(result.success).toBe(false);
@@ -65,7 +65,7 @@ describe("bookingFormSchema", () => {
   it("accepts optional email as empty string", () => {
     const result = bookingFormSchema.safeParse({
       name: "Мария",
-      phone: "0897077098",
+      phone: "+359897077098",
       procedure: "kineziterapia",
       email: "",
     });
