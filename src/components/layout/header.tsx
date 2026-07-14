@@ -10,10 +10,11 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 import { mainNavItems } from "@/data/navigation";
 import { siteConfig } from "@/data/site-config";
 import { cn } from "@/lib/utils";
+import { useMobileNav } from "@/components/layout/mobile-nav-context";
 
 export function Header() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const { open, setOpen } = useMobileNav();
   const [scrolled, setScrolled] = useState(false);
   const isHome = pathname === "/";
 
@@ -89,7 +90,7 @@ export function Header() {
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger
             render={<Button variant="ghost" size="icon" />}
-            className={cn("lg:hidden", transparent && "text-white hover:bg-white/10")}
+            className={cn("size-11 lg:hidden", transparent && "text-white hover:bg-white/10")}
             aria-label="Отвори менюто"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

@@ -71,3 +71,10 @@ export interface JobOffer {
   requirements: string[];
   active: boolean;
 }
+
+export interface HomeBenefit {
+  id: string;
+  icon: "individual" | "proven" | "trust";
+  title: string;
+  description: string;
+}

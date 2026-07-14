@@ -19,13 +19,16 @@
 | `SocialLinks` | `variant: "header" \| "footer" \| "inline"` | Instagram + Facebook links |
 | `WorkingHours` | `compact?: boolean` | Working hours display |
 | `GoogleMap` | `height?: string` | Google Maps iframe embed |
+| `ScrollReveal` | `children`, `delay?`, `className?` | Fade-up-on-scroll wrapper (IntersectionObserver) |
 
 ### Home Components (`src/components/home/`)
 
 | Component | Props | Description |
 |-----------|-------|-------------|
 | `Hero` | — | Full-width hero with gradient, title, CTAs |
-| `ServicesPreview` | — | Grid of 6 featured ProcedureCards |
+| `ServicesPreview` | — | Premium 2-column showcase of 6 featured procedures + features strip |
+| `ProcedureShowcaseCard` | `procedure: Procedure` | Large split card (content + image) used by `ServicesPreview` |
+| `ServicesFeaturesStrip` | — | 4-column trust strip below the procedures showcase |
 | `StatsSection` | — | Key numbers (procedures, clients, experience) |
 | `TestimonialsPreview` | — | 3 reviews with CSS horizontal scroll |
 | `CTASection` | `title`, `description`, `href` | Accent-colored booking CTA banner |

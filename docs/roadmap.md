@@ -116,6 +116,7 @@
 - [x] All tests pass (82 unit tests)
 
 ### Milestone 11: Final Polish
+- [x] Mobile-only hero redesign (<640px): portrait photo crop, bottom-anchored content, single CTA, fixed booking bar, benefits section
 - [ ] Real images for all procedures (waiting for upload)
 - [ ] Practitioner photo for About page (waiting for upload)
 - [ ] Product content population (waiting for content)

@@ -7,6 +7,7 @@ export const siteConfig = {
   phone: "+359897077098",
   phoneDisplay: "+359897077098",
   email: "dhealth.bg@gmail.com",
+  adminEmail: "sherifkunch@gmail.com",
   address: {
     street: "Бул. Климент Охридски 33",
     city: "София",

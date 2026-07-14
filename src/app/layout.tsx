@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { MobileNavProvider } from "@/components/layout/mobile-nav-context";
 import { FloatingWhatsApp } from "@/components/shared/whatsapp-button";
 import { siteConfig } from "@/data/site-config";
 import "./globals.css";
@@ -79,12 +80,14 @@ export default function RootLayout({
         >
           Към основното съдържание
         </a>
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <FloatingWhatsApp />
+        <MobileNavProvider>
+          <Header />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <FloatingWhatsApp />
+        </MobileNavProvider>
       </body>
     </html>
   );

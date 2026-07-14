@@ -1,6 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/data/site-config";
+import { cn } from "@/lib/utils";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -45,13 +47,20 @@ export function WhatsAppViberButtons() {
 }
 
 export function FloatingWhatsApp() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   return (
     <a
       href={siteConfig.social.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Пишете ни в WhatsApp"
-      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110"
+      className={cn(
+        "fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-110",
+        isHome &&
+          "max-sm:bottom-[calc(84px+env(safe-area-inset-bottom))] max-sm:right-[18px] max-sm:h-[52px] max-sm:w-[52px]"
+      )}
     >
       <WhatsAppIcon className="h-7 w-7" />
     </a>

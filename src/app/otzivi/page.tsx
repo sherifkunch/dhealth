@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/page-header";
 import { ReviewCard } from "@/components/reviews/review-card";
 import { ReviewForm } from "@/components/reviews/review-form";
-import { reviews } from "@/data/reviews";
+import { reviews as staticReviews } from "@/data/reviews";
+import { getApprovedReviews } from "@/lib/reviews-store";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Отзиви",
@@ -10,8 +13,13 @@ export const metadata: Metadata = {
     "Отзиви и мнения на клиенти за DHealth София. Прочетете какво казват нашите пациенти.",
 };
 
-export default function ReviewsPage() {
-  const avgRating = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+export default async function ReviewsPage() {
+  const approvedReviews = await getApprovedReviews();
+  const allReviews = [...staticReviews, ...approvedReviews].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const avgRating = allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -21,11 +29,11 @@ export default function ReviewsPage() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: avgRating.toFixed(1),
-      reviewCount: reviews.length,
+      reviewCount: allReviews.length,
       bestRating: 5,
       worstRating: 1,
     },
-    review: reviews.map((r) => ({
+    review: allReviews.map((r) => ({
       "@type": "Review",
       author: { "@type": "Person", name: r.name },
       reviewRating: { "@type": "Rating", ratingValue: r.rating },
@@ -46,7 +54,7 @@ export default function ReviewsPage() {
       />
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((review) => (
+          {allReviews.map((review) => (
             <ReviewCard key={review.id} review={review} />
           ))}
         </div>
