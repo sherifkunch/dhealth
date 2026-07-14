@@ -11,6 +11,7 @@ export const siteConfig = {
     street: "Бул. Климент Охридски 33",
     city: "София",
     country: "България",
+    mapsUrl: "https://maps.google.com/?q=Бул.+Климент+Охридски+33,+София,+България",
   },
   workingHours: {
     days: "Понеделник — Събота",

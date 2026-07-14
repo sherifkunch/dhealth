@@ -94,10 +94,15 @@ export function Footer() {
                 <Mail className="mt-0.5 h-4 w-4 shrink-0" />
                 {siteConfig.email}
               </a>
-              <div className="flex items-start gap-2 text-sm text-white/65">
+              <a
+                href={siteConfig.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 text-sm text-white/65 hover:text-white"
+              >
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>{siteConfig.address.street}, {siteConfig.address.city}</span>
-              </div>
+              </a>
               <div className="flex items-start gap-2 text-sm text-white/65">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
