@@ -93,12 +93,20 @@ export async function POST(request: Request) {
 
       if (process.env.RESEND_API_KEY) {
         const resend = new Resend(process.env.RESEND_API_KEY);
-        await resend.emails.send({
+        const { error } = await resend.emails.send({
           from: "DHealth <bookings@dhealth.bg>",
           to: siteConfig.adminEmail,
           subject,
           html,
         });
+
+        if (error) {
+          console.error("Resend send failed (review):", error);
+          return NextResponse.json(
+            { success: false, message: "Възникна грешка при изпращането на имейла." },
+            { status: 502 }
+          );
+        }
       } else {
         console.log(`[review] ${subject}\nApproval link: ${approvalUrl}`);
       }
@@ -107,12 +115,20 @@ export async function POST(request: Request) {
 
       if (process.env.RESEND_API_KEY) {
         const resend = new Resend(process.env.RESEND_API_KEY);
-        await resend.emails.send({
+        const { error } = await resend.emails.send({
           from: "DHealth <bookings@dhealth.bg>",
-          to: siteConfig.email,
+          to: [siteConfig.email, siteConfig.adminEmail],
           subject,
           html,
         });
+
+        if (error) {
+          console.error(`Resend send failed (${data.type}):`, error);
+          return NextResponse.json(
+            { success: false, message: "Възникна грешка при изпращането на имейла." },
+            { status: 502 }
+          );
+        }
       } else {
         console.log(`[${data.type}] ${subject}:`, JSON.stringify(data, null, 2));
       }
