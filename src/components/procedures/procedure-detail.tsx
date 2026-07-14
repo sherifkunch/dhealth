@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProcedureCard } from "./procedure-card";
@@ -14,6 +15,16 @@ export function ProcedureDetail({ procedure, relatedProcedures }: ProcedureDetai
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-3">
         <div className="lg:col-span-2">
+          <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl">
+            <Image
+              src={procedure.image}
+              alt={procedure.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 66vw"
+              priority
+            />
+          </div>
           <div className="prose prose-gray max-w-none">
             <p className="text-lg leading-relaxed text-muted-foreground">
               {procedure.fullDescription}
