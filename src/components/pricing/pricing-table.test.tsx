@@ -7,8 +7,8 @@ const mockCategories: PricingCategory[] = [
   {
     category: "Тест категория",
     items: [
-      { name: "Услуга 1", priceBGN: 100, priceEUR: 51.13 },
-      { name: "Пакет услуга", sessions: "8 процедури", priceBGN: 700, priceEUR: 357.9 },
+      { name: "Услуга 1", priceEUR: 51.13 },
+      { name: "Пакет услуга", sessions: "8 процедури", priceEUR: 357.9 },
     ],
   },
 ];
@@ -25,10 +25,10 @@ describe("PricingTable", () => {
     expect(screen.getAllByText("Пакет услуга").length).toBeGreaterThan(0);
   });
 
-  it("renders BGN prices", () => {
+  it("renders EUR prices", () => {
     render(<PricingTable categories={mockCategories} />);
-    expect(screen.getAllByText(/100/).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/700/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/€51\.13/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/€357\.90/).length).toBeGreaterThan(0);
   });
 
   it("renders session info for package items", () => {

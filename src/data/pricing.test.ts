@@ -17,16 +17,7 @@ describe("pricing data", () => {
     for (const cat of pricing) {
       for (const item of cat.items) {
         expect(item.name).toBeTruthy();
-        expect(item.priceBGN).toBeGreaterThan(0);
         expect(item.priceEUR).toBeGreaterThan(0);
-      }
-    }
-  });
-
-  it("EUR prices are less than BGN prices", () => {
-    for (const cat of pricing) {
-      for (const item of cat.items) {
-        expect(item.priceEUR).toBeLessThan(item.priceBGN);
       }
     }
   });

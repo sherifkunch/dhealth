@@ -16,8 +16,7 @@ export function PricingTable({ categories }: PricingTableProps) {
                 <tr className="border-b text-left text-muted-foreground">
                   <th className="pb-3 pr-4 font-medium">Услуга</th>
                   <th className="hidden pb-3 pr-4 font-medium sm:table-cell">Пакет</th>
-                  <th className="pb-3 pr-4 text-right font-medium">Цена (лв)</th>
-                  <th className="hidden pb-3 text-right font-medium md:table-cell">Цена (€)</th>
+                  <th className="pb-3 text-right font-medium">Цена (€)</th>
                 </tr>
               </thead>
               <tbody>
@@ -32,10 +31,7 @@ export function PricingTable({ categories }: PricingTableProps) {
                     <td className="hidden py-3 pr-4 text-muted-foreground sm:table-cell">
                       {item.sessions ?? "—"}
                     </td>
-                    <td className="py-3 pr-4 text-right font-medium">
-                      {item.priceBGN} лв
-                    </td>
-                    <td className="hidden py-3 text-right text-muted-foreground md:table-cell">
+                    <td className="py-3 text-right font-medium">
                       €{item.priceEUR.toFixed(2)}
                     </td>
                   </tr>

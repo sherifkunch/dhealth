@@ -14,7 +14,6 @@ export interface Procedure {
 export interface PricingItem {
   name: string;
   sessions?: string;
-  priceBGN: number;
   priceEUR: number;
 }
 
