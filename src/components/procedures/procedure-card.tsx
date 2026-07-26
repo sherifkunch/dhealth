@@ -13,7 +13,7 @@ export function ProcedureCard({ procedure }: ProcedureCardProps) {
       href={`/protseduri/${procedure.slug}`}
       className="group flex flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/8"
     >
-      <div className="relative h-48 w-full overflow-hidden bg-muted">
+      <div className="relative h-64 w-full overflow-hidden bg-muted sm:h-48">
         <Image
           src={procedure.image}
           alt={procedure.name}
