@@ -16,5 +16,6 @@ export const presoterapia: Procedure = {
   ],
   duration: "30-40 мин",
   image: "/images/procedures/presoterapia/main.jpg",
+  gallery: ["/images/procedures/presoterapia/secondary.jpg"],
   featured: false,
 };

@@ -7,6 +7,7 @@ export interface Procedure {
   benefits: string[];
   duration?: string;
   image: string;
+  gallery?: string[];
   featured: boolean;
 }
 
@@ -34,8 +35,9 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  price?: number;
+  priceEUR: number;
   image: string;
+  gallery?: string[];
   category: string;
 }
 

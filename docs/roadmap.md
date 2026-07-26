@@ -77,8 +77,10 @@
 ### Milestone 8: About & Products ✅
 - [x] About page content and layout
 - [x] Products page structure with empty state
-- [ ] Product card component (deferred — no products yet)
-- [ ] Category filtering (deferred — no products yet)
+- [x] Product card component + tests
+- [ ] Category filtering (deferred — only 1 category in use)
+- [x] Purchase flow: order form (react-hook-form + Zod) posting to /api/contact, email notification to clinic
+- [x] Two D. Health resistance band products (€15, €24) with photos
 
 ### Milestone 9: SEO & Performance ✅
 - [x] Sitemap generation (src/app/sitemap.ts)
@@ -119,7 +121,7 @@
 - [x] Mobile-only hero redesign (<640px): portrait photo crop, bottom-anchored content, single CTA, fixed booking bar, benefits section
 - [ ] Real images for all procedures (waiting for upload)
 - [ ] Practitioner photo for About page (waiting for upload)
-- [ ] Product content population (waiting for content)
+- [x] Product content population (2 resistance band sets added)
 - [ ] Cross-browser testing
 - [ ] Mobile device testing
 - [ ] Final content review with clinic owner

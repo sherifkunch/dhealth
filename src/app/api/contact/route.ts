@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
-import { contactFormSchema, bookingFormSchema, reviewFormSchema } from "@/lib/schemas";
+import { contactFormSchema, bookingFormSchema, reviewFormSchema, purchaseFormSchema } from "@/lib/schemas";
 import { siteConfig } from "@/data/site-config";
 import { savePendingReview } from "@/lib/reviews-store";
 
@@ -9,6 +9,7 @@ const formSchema = z.discriminatedUnion("type", [
   contactFormSchema.extend({ type: z.literal("contact") }),
   bookingFormSchema.extend({ type: z.literal("booking") }),
   reviewFormSchema.extend({ type: z.literal("review") }),
+  purchaseFormSchema.extend({ type: z.literal("purchase") }),
 ]);
 
 type FormData = z.infer<typeof formSchema>;
@@ -23,6 +24,8 @@ function buildSubject(data: FormData): string {
       return `Нова заявка за час от ${data.name} — ${data.procedure}`;
     case "review":
       return `Нов отзив от ${data.name} — ${data.rating} звезди`;
+    case "purchase":
+      return `Нова поръчка от ${data.name} — ${data.productName} (x${data.quantity})`;
   }
 }
 

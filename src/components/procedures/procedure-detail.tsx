@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ProcedureCard } from "./procedure-card";
 import type { Procedure } from "@/types";
 
@@ -11,13 +15,21 @@ interface ProcedureDetailProps {
 }
 
 export function ProcedureDetail({ procedure, relatedProcedures }: ProcedureDetailProps) {
+  const photos = [procedure.image, ...(procedure.gallery ?? [])];
+  const [activePhoto, setActivePhoto] = useState(photos[0]);
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl">
+          <div
+            className={cn(
+              "relative aspect-video w-full overflow-hidden rounded-xl",
+              photos.length > 1 ? "mb-4" : "mb-8"
+            )}
+          >
             <Image
-              src={procedure.image}
+              src={activePhoto}
               alt={procedure.name}
               fill
               className="object-cover"
@@ -25,6 +37,25 @@ export function ProcedureDetail({ procedure, relatedProcedures }: ProcedureDetai
               priority
             />
           </div>
+          {photos.length > 1 && (
+            <div className="mb-8 flex gap-2">
+              {photos.map((photo, i) => (
+                <button
+                  key={photo}
+                  type="button"
+                  onClick={() => setActivePhoto(photo)}
+                  aria-label={`Снимка ${i + 1} на ${procedure.name}`}
+                  aria-pressed={activePhoto === photo}
+                  className={cn(
+                    "relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-muted ring-2 transition",
+                    activePhoto === photo ? "ring-primary" : "ring-transparent hover:ring-primary/40"
+                  )}
+                >
+                  <Image src={photo} alt="" fill className="object-cover" sizes="64px" />
+                </button>
+              ))}
+            </div>
+          )}
           <div className="prose prose-gray max-w-none">
             <p className="text-lg leading-relaxed text-muted-foreground">
               {procedure.fullDescription}

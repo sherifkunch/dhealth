@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { contactFormSchema, bookingFormSchema, reviewFormSchema } from "./schemas";
+import { contactFormSchema, bookingFormSchema, reviewFormSchema, purchaseFormSchema } from "./schemas";
 
 describe("contactFormSchema", () => {
   it("accepts valid input", () => {
@@ -99,5 +99,56 @@ describe("reviewFormSchema", () => {
       text: "Добре",
     });
     expect(result.success).toBe(false);
+  });
+});
+
+describe("purchaseFormSchema", () => {
+  it("accepts valid input", () => {
+    const result = purchaseFormSchema.safeParse({
+      name: "Габриела",
+      phone: "+359897077098",
+      productId: "komplekt-2-lastika",
+      productName: "Комплект от 2 фитнес ластика D. Health",
+      priceEUR: 15,
+      quantity: 1,
+    });
+    expect(result.success).toBe(true);
+  });
+
+  it("rejects missing product", () => {
+    const result = purchaseFormSchema.safeParse({
+      name: "Габриела",
+      phone: "+359897077098",
+      productId: "",
+      productName: "",
+      priceEUR: 15,
+      quantity: 1,
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("rejects quantity below 1", () => {
+    const result = purchaseFormSchema.safeParse({
+      name: "Габриела",
+      phone: "+359897077098",
+      productId: "komplekt-2-lastika",
+      productName: "Комплект от 2 фитнес ластика D. Health",
+      priceEUR: 15,
+      quantity: 0,
+    });
+    expect(result.success).toBe(false);
+  });
+
+  it("accepts optional email as empty string", () => {
+    const result = purchaseFormSchema.safeParse({
+      name: "Габриела",
+      phone: "+359897077098",
+      email: "",
+      productId: "komplekt-2-lastika",
+      productName: "Комплект от 2 фитнес ластика D. Health",
+      priceEUR: 15,
+      quantity: 2,
+    });
+    expect(result.success).toBe(true);
   });
 });

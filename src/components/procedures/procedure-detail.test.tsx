@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { ProcedureDetail } from "./procedure-detail";
 import type { Procedure } from "@/types";
 
@@ -60,5 +60,26 @@ describe("ProcedureDetail", () => {
   it("renders related procedures", () => {
     render(<ProcedureDetail procedure={mockProcedure} relatedProcedures={mockRelated} />);
     expect(screen.getAllByText("Свързана процедура").length).toBeGreaterThan(0);
+  });
+
+  it("does not render gallery thumbnails when there is only one photo", () => {
+    render(<ProcedureDetail procedure={mockProcedure} relatedProcedures={mockRelated} />);
+    expect(screen.queryByRole("button", { name: /Снимка/ })).toBeNull();
+  });
+
+  it("renders gallery thumbnails and switches the main photo on click", () => {
+    const procedureWithGallery: Procedure = {
+      ...mockProcedure,
+      gallery: ["/images/procedures/test-2.jpg"],
+    };
+    render(<ProcedureDetail procedure={procedureWithGallery} relatedProcedures={mockRelated} />);
+
+    const thumbnails = screen.getAllByRole("button", { name: /Снимка/ });
+    expect(thumbnails).toHaveLength(2);
+    expect(thumbnails[0]).toHaveAttribute("aria-pressed", "true");
+
+    fireEvent.click(thumbnails[1]);
+    expect(thumbnails[1]).toHaveAttribute("aria-pressed", "true");
+    expect(thumbnails[0]).toHaveAttribute("aria-pressed", "false");
   });
 });

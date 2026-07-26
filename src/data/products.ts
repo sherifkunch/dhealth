@@ -1,9 +1,32 @@
 import type { Product } from "@/types";
 
-export const products: Product[] = [];
+export const products: Product[] = [
+  {
+    id: "komplekt-2-lastika",
+    name: "Комплект от 2 фитнес ластика D. Health",
+    description:
+      "Плетени фитнес ластици с мраморен десен за тонус, рехабилитация и загрявка. Идеални за упражнения за седалище, крака и глутеус в домашни условия или на тренировка.",
+    priceEUR: 15,
+    image: "/images/products/370258859_1406817223521231_3002255618723805377_n.jpg",
+    gallery: ["/images/products/375017611_1516417835835775_4056501576710785100_n.jpg"],
+    category: "Ластици",
+  },
+  {
+    id: "komplekt-3-lastika-chanta",
+    name: "Комплект от 3 фитнес ластика с чанта D. Health",
+    description:
+      "Пълен комплект от 3 плетени фитнес ластика с различно съпротивление (черен, бял и розов мрамор) и практична мрежеста чанта за съхранение и пренасяне.",
+    priceEUR: 24,
+    image: "/images/products/416015641_903391631284062_7038846543203751432_n.jpg",
+    gallery: [
+      "/images/products/413357143_893517265567648_4665345067680950431_n.jpg",
+      "/images/products/415983397_753716863006388_4192260885224555006_n.jpg",
+    ],
+    category: "Ластици",
+  },
+];
 
 export const productCategories = [
-  "Кремове",
   "Ластици",
   "Оборудване",
   "Хранителни добавки",

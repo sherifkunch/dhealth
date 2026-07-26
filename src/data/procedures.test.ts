@@ -38,6 +38,9 @@ describe("procedures data", () => {
   it("all images point to /images/procedures/", () => {
     for (const p of procedures) {
       expect(p.image).toMatch(/^\/images\/procedures\//);
+      for (const photo of p.gallery ?? []) {
+        expect(photo).toMatch(/^\/images\/procedures\//);
+      }
     }
   });
 
