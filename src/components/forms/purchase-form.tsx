@@ -11,6 +11,17 @@ import { Label } from "@/components/ui/label";
 import { purchaseFormSchema, type PurchaseFormData } from "@/lib/schemas";
 import { products } from "@/data/products";
 
+const fieldIds: Record<keyof PurchaseFormData, string> = {
+  productId: "purchase-product",
+  productName: "purchase-product",
+  priceEUR: "purchase-product",
+  quantity: "purchase-quantity",
+  name: "purchase-name",
+  phone: "purchase-phone",
+  email: "purchase-email",
+  message: "purchase-message",
+};
+
 export function PurchaseForm() {
   const searchParams = useSearchParams();
   const preselected = searchParams.get("product") ?? "";
@@ -57,6 +68,13 @@ export function PurchaseForm() {
       setStatus("error");
     }
   }
+  function onInvalid(fieldErrors: typeof errors) {
+    const firstField = Object.keys(fieldErrors)[0] as keyof PurchaseFormData | undefined;
+    if (!firstField) return;
+    const el = document.getElementById(fieldIds[firstField]);
+    el?.scrollIntoView({ behavior: "smooth", block: "center" });
+    el?.focus();
+  }
   if (status === "success") {
     return (
       <div className="rounded-lg border border-primary/30 bg-primary/5 p-8 text-center">
@@ -71,7 +89,7 @@ export function PurchaseForm() {
     );
   }
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <form onSubmit={handleSubmit(onSubmit, onInvalid)} className="space-y-5">
       <div>
         <Label htmlFor="purchase-product">Продукт *</Label>
         <select
