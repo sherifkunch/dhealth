@@ -1,7 +1,7 @@
 import { Activity, Users, Award, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Activity, value: "12+", label: "Процедури" },
+  { icon: Activity, value: "18+", label: "Процедури" },
   { icon: Users, value: "500+", label: "Доволни клиенти" },
   { icon: Award, value: "5+", label: "Години опит" },
   { icon: Clock, value: "6", label: "Дни в седмицата" },

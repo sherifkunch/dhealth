@@ -2,8 +2,8 @@ import { describe, it, expect } from "vitest";
 import { procedures, getProcedureBySlug, getFeaturedProcedures, getAllProcedureSlugs } from "./procedures";
 
 describe("procedures data", () => {
-  it("contains exactly 12 procedures", () => {
-    expect(procedures).toHaveLength(12);
+  it("contains exactly 18 procedures", () => {
+    expect(procedures).toHaveLength(18);
   });
 
   it("all procedures have required fields", () => {
@@ -62,7 +62,7 @@ describe("getProcedureBySlug", () => {
 });
 
 describe("getAllProcedureSlugs", () => {
-  it("returns 12 slugs", () => {
-    expect(getAllProcedureSlugs()).toHaveLength(12);
+  it("returns 18 slugs", () => {
+    expect(getAllProcedureSlugs()).toHaveLength(18);
   });
 });

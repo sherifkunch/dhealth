@@ -16,5 +16,10 @@ export const tekarTerapia: Procedure = {
   ],
   duration: "20-40 мин",
   image: "/images/procedures/tekar-terapia/main.jpg",
+  gallery: [
+    "/images/procedures/tekar-terapia/YTS_8961_(2048).jpg",
+    "/images/procedures/tekar-terapia/YTS_8970_(2048).jpg",
+    "/images/procedures/tekar-terapia/YTS_8976_(2048).jpg",
+  ],
   featured: true,
 };

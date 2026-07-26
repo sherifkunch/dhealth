@@ -6,7 +6,7 @@ import { procedures } from "@/data/procedures";
 export const metadata: Metadata = {
   title: "Процедури",
   description:
-    "Всички процедури за кинезитерапия и физиотерапия в DHealth София. 12+ специализирани терапии.",
+    "Всички процедури за кинезитерапия и физиотерапия в DHealth София. 18+ специализирани терапии.",
 };
 
 export default function ProceduresPage() {

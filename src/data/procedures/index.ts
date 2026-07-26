@@ -12,6 +12,12 @@ import { miopunktura } from "./miopunktura";
 import { emsTrenirovka } from "./ems-trenirovka";
 import { presoterapia } from "./presoterapia";
 import { osteopatichenMasazh } from "./osteopatichen-masazh";
+import { perkusionnaTerapia } from "./perkusionna-terapia";
+import { masaj } from "./masaj";
+import { lazerterapia } from "./lazerterapia";
+import { igloterapia } from "./igloterapia";
+import { ergonterapia } from "./ergonterapia";
+import { elektromuskulnaTerapia } from "./elektromuskulna-terapia";
 
 export const procedures: Procedure[] = [
   fizioterapia,
@@ -26,6 +32,12 @@ export const procedures: Procedure[] = [
   emsTrenirovka,
   presoterapia,
   osteopatichenMasazh,
+  perkusionnaTerapia,
+  masaj,
+  lazerterapia,
+  igloterapia,
+  ergonterapia,
+  elektromuskulnaTerapia,
 ];
 
 export function getProcedureBySlug(slug: string): Procedure | undefined {

@@ -16,5 +16,6 @@ export const kineziterapia: Procedure = {
   ],
   duration: "45-60 мин",
   image: "/images/procedures/kineziterapia/main.jpg",
+  gallery: ["/images/procedures/kineziterapia/YTS_9051_(2048).jpg"],
   featured: true,
 };
