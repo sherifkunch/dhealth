@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { ContactForm } from "@/components/forms/contact-form";
@@ -21,6 +22,17 @@ export default function ContactPage() {
         description="Свържете се с нас за консултация или запазване на час."
       />
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative mb-12 aspect-[21/9] w-full overflow-hidden rounded-2xl">
+          <Image
+            src="/images/kontakti/room.jpg"
+            alt="Кабинет на DHealth"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
+
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <h2 className="text-xl font-semibold">Изпратете ни съобщение</h2>
@@ -83,7 +95,18 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <WorkingHours />
+            <div className="grid grid-cols-2 gap-4">
+              <WorkingHours />
+              <div className="relative overflow-hidden rounded-lg border">
+                <Image
+                  src="/images/kontakti/detail.jpg"
+                  alt="Детайл от кабинета на DHealth"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+            </div>
 
             <GoogleMap height="250px" />
           </div>

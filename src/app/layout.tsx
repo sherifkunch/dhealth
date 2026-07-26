@@ -54,7 +54,7 @@ const jsonLd = {
     addressCountry: "BG",
   },
   openingHours: "Mo-Sa 08:00-20:00",
-  priceRange: "20-72 EUR",
+  priceRange: "20-70 EUR",
 };
 
 export default function RootLayout({

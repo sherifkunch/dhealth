@@ -22,8 +22,8 @@ describe("pricing data", () => {
     }
   });
 
-  it("has 20 total items", () => {
+  it("has 21 total items", () => {
     const total = pricing.reduce((sum, cat) => sum + cat.items.length, 0);
-    expect(total).toBe(20);
+    expect(total).toBe(21);
   });
 });

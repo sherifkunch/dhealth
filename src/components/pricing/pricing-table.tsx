@@ -32,7 +32,7 @@ export function PricingTable({ categories }: PricingTableProps) {
                       {item.sessions ?? "—"}
                     </td>
                     <td className="py-3 text-right font-medium">
-                      €{item.priceEUR.toFixed(2)}
+                      €{Math.ceil(item.priceEUR)}
                     </td>
                   </tr>
                 ))}

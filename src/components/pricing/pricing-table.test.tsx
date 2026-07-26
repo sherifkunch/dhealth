@@ -25,10 +25,10 @@ describe("PricingTable", () => {
     expect(screen.getAllByText("Пакет услуга").length).toBeGreaterThan(0);
   });
 
-  it("renders EUR prices", () => {
+  it("renders EUR prices rounded up to whole euros", () => {
     render(<PricingTable categories={mockCategories} />);
-    expect(screen.getAllByText(/€51\.13/).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/€357\.90/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText("€52").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("€358").length).toBeGreaterThan(0);
   });
 
   it("renders session info for package items", () => {
