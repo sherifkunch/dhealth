@@ -41,6 +41,3 @@ yarn-error.log*
 next-env.d.ts
 proffesional-photos
 info-za-saita.pdf
-
-# review store (runtime data, not committed)
-/data/*.json

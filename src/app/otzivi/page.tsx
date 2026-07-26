@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/page-header";
 import { ReviewCard } from "@/components/reviews/review-card";
 import { ReviewForm } from "@/components/reviews/review-form";
-import { reviews as staticReviews } from "@/data/reviews";
-import { getApprovedReviews } from "@/lib/reviews-store";
-
-export const dynamic = "force-dynamic";
+import { reviews as allReviews } from "@/data/reviews";
 
 export const metadata: Metadata = {
   title: "Отзиви",
@@ -13,12 +10,7 @@ export const metadata: Metadata = {
     "Отзиви и мнения на клиенти за DHealth София. Прочетете какво казват нашите пациенти.",
 };
 
-export default async function ReviewsPage() {
-  const approvedReviews = await getApprovedReviews();
-  const allReviews = [...staticReviews, ...approvedReviews].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
-
+export default function ReviewsPage() {
   const avgRating = allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length;
 
   const jsonLd = {
