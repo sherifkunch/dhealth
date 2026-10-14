@@ -29,4 +29,5 @@ export const siteConfig = {
     name: "Диана Димова",
     title: "Кинезитерапевт",
   },
+  metaPixelId: "1672925677749861",
 } as const;
